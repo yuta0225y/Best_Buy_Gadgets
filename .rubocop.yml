@@ -1,0 +1,29 @@
+inherit_from: .rubocop_todo.yml
+require:
+  - rubocop-capybara
+  - rubocop-rails
+
+# 全て
+AllCops:
+  SuggestExtensions: false
+  # すべてのCopをデフォルトで無効にする
+  # Enabled: false  # この行を削除
+  # 新しいコップをデフォルトで有効にする
+  NewCops: enable
+
+# インデントに関する指摘を有効にする
+Layout/IndentationWidth:
+  Enabled: true
+Layout/IndentationConsistency:
+  Enabled: true
+
+# 全角文字の存在に関する指摘を有効にする
+Style/AsciiComments:
+  Enabled: true
+
+# 追加するコップの設定
+Lint/AmbiguousAssignment:
+  Enabled: true
+Lint/ConstantOverwrittenInRescue:
+  Enabled: true
+# 他の新しいコップもここに追加
