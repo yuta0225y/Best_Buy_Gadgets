@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body class="bg-gray-100">
-    <%= render 'shared/header', class: "bg-white shadow" %>
-    <main class="container mx-auto p-4">
+    <% if logged_in? %>
+      <%= render 'shared/header', class: "bg-white shadow" %>
+      <main class="container mx-auto p-4">
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+      <main class="container mx-auto p-4">
+    <% end %>
       <%= yield %>
     </main>
-    <footer class="bg-gray-800 text-white text-center py-4">
-      <p>&copy; 2024 RUNTEQ祭</p>
-    </footer>
+    <%= render 'shared/footer' %>
   </body>
 </html>

@@ -10,7 +10,8 @@
           <details>
             <summary>My Gadgets</summary>
             <ul class="bg-base-100 rounded-t-none p-2">
-              <li><%= link_to 'Logout',logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしてもよろしいですか？" } %></li>
+              <li><%= link_to 'Login',login_path %></li>
+              <li><%= link_to 'SignUp',new_user_path %></li>           
             </ul>
           </details>
         </li>
