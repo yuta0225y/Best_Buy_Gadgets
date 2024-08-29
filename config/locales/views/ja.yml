@@ -11,7 +11,15 @@ ja:
     new:
       title: ログイン
       to_register_page: 登録ページへ
+    create:
+      success: ログインに成功しました
+      failure: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
   users:
     new:
       title: ユーザー登録
       to_login_page: ログインページへ
+    create:
+      success: 登録が完了しました
+      failure: 登録に失敗しました

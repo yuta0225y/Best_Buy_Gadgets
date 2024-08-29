@@ -18,7 +18,8 @@
       <%= render 'shared/before_login_header' %>
       <main class="container mx-auto p-4">
     <% end %>
-      <%= yield %>
+    <%= render 'shared/flash_message' %>
+    <%= yield %>
     </main>
     <%= render 'shared/footer' %>
   </body>
