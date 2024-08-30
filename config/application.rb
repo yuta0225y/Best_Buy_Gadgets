@@ -33,5 +33,7 @@ module Myapp
     end
 
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+
   end
 end
