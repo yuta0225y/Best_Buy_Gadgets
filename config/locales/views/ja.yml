@@ -2,6 +2,8 @@ ja:
   defaults:
     flash_message:
       require_login: ログインしてください
+      created: 登録しました
+      not_created: 登録に失敗しました
   helpers:
     submit:
       create: 登録
