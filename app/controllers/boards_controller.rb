@@ -15,22 +15,6 @@ class BoardsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def search_gadgets
-    keyword = params[:keyword]
-    items = RakutenWebService::Ichiba::Item.search(keyword: keyword, genreId: '100240', hits: 10) # 100240はガジェットのジャンルID
-    
-    @gadgets = items.map do |item|
-      {
-        title: item['itemName'],
-        image_url: item['mediumImageUrls'].first['imageUrl'],
-        item_url: item['itemUrl'],
-        price: item['itemPrice']
-      }
-    end
-  
-    render json: @gadgets
-  end
 end
 
 private

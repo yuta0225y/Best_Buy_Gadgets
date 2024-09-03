@@ -1,51 +1,18 @@
 <div class="container mx-auto">
   <div class="flex justify-center">
-    <div class="w-full max-w-lg">
+    <div class="w-full lg:w-2/3">
       <h1 class="text-2xl font-bold mb-4"><%= t('.title') %></h1>
       <%= form_with model: @board, class: "new_board" do |f| %>
         <div class="mb-4">
           <%= f.label :title, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.text_field :title, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500" %>
+          <%= f.text_field :title, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500" %>
         </div>
         <div class="mb-4">
           <%= f.label :body, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.text_area :body, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500", rows: "10" %>
+          <%= f.text_area :body, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500", rows: "10" %>
         </div>
-        
-<!-- ガジェット検索フォームの追加 -->
-<div class="mb-4">
-  <%= f.label :gadget_search, "ガジェット検索", for: "keyword" %>
-  <%= text_field_tag :keyword, nil, id: "keyword", class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500", autocomplete: "off" %>
-  <%= button_tag "検索", type: :button, id: "search-button", class: "mt-2 w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600" %>
-</div>
-
-        <div id="result" class="mt-4"></div> <!-- 結果を表示する場所 -->
-
-        <%= f.submit nil, class: "w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600" %>
+        <%= f.submit nil, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
       <% end %>
     </div>
   </div>
 </div>
-
-<script>
-document.getElementById('search-button').addEventListener('click', function() {
-  const keyword = document.querySelector('input[name="keyword"]').value;
-  fetch(`/search_gadgets?keyword=${encodeURIComponent(keyword)}`)
-    .then(response => response.json())
-    .then(data => {
-      const resultContainer = document.getElementById('result');
-      resultContainer.innerHTML = ''; // 以前の結果をクリア
-
-      data.forEach(gadget => {
-        const item = document.createElement('div');
-        const image = document.createElement('img'); // 新しいimg要素を作成
-
-        item.textContent = gadget.title; // ガジェットの名前を表示
-        image.src = gadget.image_url; // img要素のsrc属性にガジェットの画像URLを設定
-
-        item.appendChild(image); // img要素をdiv要素に追加
-        resultContainer.appendChild(item); // div要素を結果のコンテナに追加
-      });
-    });
-});
-</script>

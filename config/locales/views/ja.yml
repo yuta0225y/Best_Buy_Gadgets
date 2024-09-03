@@ -28,3 +28,12 @@ ja:
     create:
       success: 登録が完了しました
       failure: 登録に失敗しました
+  header:
+    title: Best Buy Gadgets
+    posts: 投稿一覧
+    new_post: 新規投稿
+    my_page: マイページ
+    gadgets: ガジェット
+    logout: ログアウト
+    login: ログイン
+    signup: ユーザー登録
