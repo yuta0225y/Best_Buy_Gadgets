@@ -1,17 +1,17 @@
 <header>
   <nav class="navbar bg-base-100 z-10 relative">
     <div class="flex-1">
-      <%= link_to 'Best Buy Gadgets', root_path, class: 'btn btn-ghost text-xl' %>
+      <%= link_to t('header.title'), root_path, class: 'btn btn-ghost text-xl' %>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        <li><%= link_to '投稿一覧', boards_path %></li>
+        <li><%= link_to t('header.posts'), boards_path %></li>
         <li>
           <details>
-            <summary>My Gadgets</summary>
+            <summary><%= t('header.my_page') %></summary>
             <ul class="bg-base-100 rounded-t-none p-2">
-              <li><%= link_to 'ログイン',login_path %></li>
-              <li><%= link_to 'ユーザー登録',new_user_path %></li>           
+              <li><%= link_to t('header.login'),login_path %></li>
+              <li><%= link_to t('header.signup'),new_user_path %></li>           
             </ul>
           </details>
         </li>
