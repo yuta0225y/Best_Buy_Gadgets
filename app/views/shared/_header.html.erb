@@ -1,18 +1,18 @@
 <header>
   <nav class="navbar bg-base-100">
     <div class="flex-1">
-      <%= link_to 'Best Buy Gadgets', '/', class: 'btn btn-ghost text-xl' %>
+      <%= link_to t('header.title'), '/', class: 'btn btn-ghost text-xl' %>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        <li><%= link_to '投稿一覧', boards_path %></li>
-        <li><%= link_to '投稿する', new_board_path %></li>
+        <li><%= link_to t('header.posts'), boards_path %></li>
+        <li><%= link_to t('header.new_post'), new_board_path %></li>
         <li>
           <details>
-            <summary>マイページ</summary>
+            <summary><%= t('header.my_page') %></summary>
             <ul class="bg-base-100 rounded-t-none p-2">
-              <li><a>〇〇'sガジェット</a></li>
-              <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしてもよろしいですか？" }   %></li>
+              <li><a><% t('header.gadgets') %></a></li>
+              <li><%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしてもよろしいですか？" }   %></li>
             </ul>
           </details>
         </li>
