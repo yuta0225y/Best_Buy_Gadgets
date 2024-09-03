@@ -12,7 +12,12 @@
           <%= f.label :body, class: "block text-sm font-medium text-gray-700" %>
           <%= f.text_area :body, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500", rows: "10" %>
         </div>
-        <%= f.submit nil, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+        <div class="mb-4">
+          <%= f.label :board_image, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.file_field :board_image, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm", accept: 'image/*' %>
+          <%= f.hidden_field :board_image_cache %>
+          </div>
+          <%= f.submit nil, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
       <% end %>
     </div>
   </div>
