@@ -11,7 +11,7 @@
             <%= link_to '#', id: "button-edit-#{board.id}" do %>
               <i class="bi bi-pencil-fill"></i>
             <% end %>
-            <%= link_to '#', id: "button-delete-#{board.id}", method: :delete, data: {confirm: ''} do %>
+            <%= link_to '#', id: "button-delete-#{board.id}", method: :delete, data: {confirm: '本当に削除しますか？'} do %>
               <i class="bi bi-trash-fill"></i>
             <% end %>
           </div>
