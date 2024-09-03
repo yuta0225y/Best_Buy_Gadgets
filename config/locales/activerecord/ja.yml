@@ -8,3 +8,6 @@ ja:
         name: 名前
         password: パスワード
         password_confirmation: パスワード確認
+      board:
+        title: タイトル
+        body: 内容

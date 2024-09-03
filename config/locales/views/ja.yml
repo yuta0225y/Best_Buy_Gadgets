@@ -2,8 +2,9 @@ ja:
   defaults:
     flash_message:
       require_login: ログインしてください
-      created: 登録しました
-      not_created: 登録に失敗しました
+      created: 投稿しました
+      not_created: 投稿できませんでした
+      require_login: ログインしてください
   helpers:
     submit:
       create: 登録
@@ -37,3 +38,6 @@ ja:
     logout: ログアウト
     login: ログイン
     signup: ユーザー登録
+  boards:
+    new:
+      title: 掲示板作成
