@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 10.times do
   User.create!(name: Faker::Name.name,
-              email: Faker::Internet.unique.email,
-              password: "password",
-              password_confirmation: "password")
+               email: Faker::Internet.unique.email,
+               password: 'password',
+               password_confirmation: 'password')
 end
 
 user_ids = User.ids

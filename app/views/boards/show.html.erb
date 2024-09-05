@@ -1,0 +1,28 @@
+<div class="container pt-20">
+  <div class="mb-6">
+    <div class="lg:w-2/3 mx-auto">
+      <h1 class="text-3xl font-bold mb-6"><%= t('.title') %></h1>
+      <article class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="p-6">
+          <div class="mb-4">
+            <%= image_tag @board.board_image_url, class: "w-full h-auto object-cover rounded-lg shadow-md" %>
+          </div>
+          <h3 class="text-xl font-semibold mb-2"><%= @board.title %></h3>
+          <ul class="flex space-x-2 text-gray-500 mb-4">
+            <li><%= "by #{@board.user.name}" %></li>
+            <li><%= l @board.created_at, format: :long %></li>
+          </ul>
+          <div class="flex justify-end space-x-4 mb-4">
+            <%= link_to "#", id: "button-edit-#{@board.id}" do %>
+              <i class="bi bi-pencil-fill text-blue-500"></i>
+            <% end %>
+            <%= link_to "#", id: "button-delete-#{@board.id}" do %>
+              <i class="bi bi-trash-fill text-red-500"></i>
+            <% end %>
+          </div>
+          <p class="leading-relaxed"><%= simple_format(@board.body) %></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
