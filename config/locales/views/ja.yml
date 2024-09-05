@@ -40,4 +40,6 @@ ja:
     signup: ユーザー登録
   boards:
     new:
-      title: 掲示板作成
+      title: 投稿作成
+    show:
+      title: 投稿詳細
