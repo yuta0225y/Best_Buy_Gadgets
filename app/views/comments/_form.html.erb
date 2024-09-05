@@ -1,0 +1,11 @@
+<div class="mb-6" id="comment-form">
+  <div class="mx-auto max-w-2xl">
+    <%= form_with model: comment, url: board_comments_path(board), class: "space-y-4" do |f| %>
+      <div>
+        <%= f.label :body, class: "block text-gray-700 text-sm font-medium mb-2" %>
+        <%= f.text_area :body, class: "form-textarea w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50", rows: 4, placeholder: Comment.human_attribute_name(:body) %>
+      </div>
+      <%= f.submit t('defaults.post'), class: "btn-primary py-2 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" %>
+    <% end %>
+  </div>
+</div>
