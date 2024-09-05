@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
@@ -9,9 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to boards_path, success: t('users.create.success')
+      redirect_to boards_path, success: t('.success')
     else
-      flash.now[:danger] = t('users.create.failure')
+      flash.now[:danger] = t('.failure')
       render :new, status: :unprocessable_entity
     end
   end
