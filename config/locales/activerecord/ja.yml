@@ -2,7 +2,6 @@ ja:
   activerecord:
     models:
       user: ユーザー
-      comment: コメント
     attributes:
       user:
         email: メールアドレス
@@ -13,5 +12,3 @@ ja:
         title: タイトル
         body: 内容
         board_image: 画像
-      comment:
-        body: コメント

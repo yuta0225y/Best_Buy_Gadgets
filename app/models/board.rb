@@ -5,5 +5,4 @@ class Board < ApplicationRecord
   validates :body, presence: true, length: { maximum: 65_535 }
   mount_uploader :board_image, BoardImageUploader
   belongs_to :user
-  has_many :comments, dependent: :destroy
 end
