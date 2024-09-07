@@ -19,6 +19,7 @@ module.exports = {
           'accent': '#F3F4F6', // オフホワイト
           'neutral': '#F9FAFB', // ホワイト
           'base-100': '#FFFFFF', // 背景色はホワイト
+          'btn-secondary': '#f3f4f6', // ボタンの背景色
         },
       },
       // 他のテーマも追加可能
