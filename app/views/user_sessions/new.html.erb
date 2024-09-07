@@ -1,19 +1,21 @@
-<div class="container mx-auto p-4">
-  <div class="max-w-lg mx-auto">
-    <h1 class="text-2xl font-bold mb-6">ログイン</h1>
-    <%= form_with url: login_path do |f| %>
-      <div class="mb-4">
-        <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
-        <%= f.email_field :email, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500" %>
+<header class="bg-base-100 shadow-md" data-theme="mytheme">
+  <div class="container mx-auto p-4">
+    <div class="max-w-lg mx-auto">
+      <h1 class="text-2xl font-bold mb-6">ログイン</h1>
+      <%= form_with url: login_path, html: { class: 'space-y-4' } do |f| %>
+        <div>
+          <%= f.label :email, class: "label" %>
+          <%= f.email_field :email, class: "input input-bordered w-full" %>
+        </div>
+        <div>
+          <%= f.label :password, class: "label" %>
+          <%= f.password_field :password, class: "input input-bordered w-full" %>
+        </div>
+        <%= f.submit class: "btn btn-primary w-full bg-gray-200 text-gray-800 hover:bg-gray-300 hover:text-gray-900 border-gray-200 hover:border-gray-300" %>
+      <% end %>
+      <div class="text-center mt-4">
+        <%= link_to t('.to_register_page'), new_user_path, class: "link link-primary" %>
       </div>
-      <div class="mb-4">
-        <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
-        <%= f.password_field :password, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500" %>
-      </div>
-      <%= f.submit class: "w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700" %>
-    <% end %>
-    <div class="text-center mt-4">
-      <%= link_to t('.to_register_page'), new_user_path, class: "text-blue-600 hover:underline" %>
     </div>
   </div>
-</div>
+</header>
