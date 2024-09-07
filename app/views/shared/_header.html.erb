@@ -1,20 +1,23 @@
-<header>
+<header class="bg-base-100 shadow-md" data-theme="mytheme">
   <nav class="navbar bg-base-100">
     <div class="flex-1">
-      <%= link_to t('header.title'), '/', class: 'btn btn-ghost text-xl' %>
+      <%= link_to '/', class: 'btn btn-ghost' do %>
+        <%= image_tag 'home.png', alt: 'Home', class: 'w-8 h-8' %>
+      <% end %>
     </div>
     <div class="flex-none">
-      <ul class="menu menu-horizontal px-1">
-        <li><%= link_to t('header.posts'), boards_path %></li>
-        <li><%= link_to t('header.new_post'), new_board_path %></li>
+      <ul class="menu menu-horizontal p-2">
+        <li><%= link_to t('header.posts'), boards_path, class: 'btn btn-ghost' %></li>
+        <li><%= link_to t('header.new_post'), new_board_path, class: 'btn btn-ghost' %></li>
         <li>
-          <details>
-            <summary><%= t('header.my_page') %></summary>
-            <ul class="bg-base-100 rounded-t-none p-2">
-              <li><a><% t('header.gadgets') %></a></li>
-              <li><%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしてもよろしいですか？" }   %></li>
-            </ul>
-          </details>
+        <details class="relative">
+        <summary class="btn btn-ghost"><%= t('header.my_page') %></summary>
+        <ul class="bg-base-100 rounded-lg shadow-lg mt-6 p-2 absolute right-0 z-20"> <!-- mt-2 を mt-4 に変更 -->
+          <li class="whitespace-nowrap"><%= link_to t('header.gadgets'), '#', class: 'btn btn-ghost' %></li>
+          <li class="whitespace-nowrap"><%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしてもよろしいですか？" }, class: 'btn btn-ghost' %></li>
+        </ul>
+      </details>
+      
         </li>
       </ul>
     </div>
