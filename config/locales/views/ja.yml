@@ -7,7 +7,7 @@ ja:
       require_login: ログインしてください
   helpers:
     submit:
-      create: 登録
+      create: 投稿
       submit: 保存
       update: 更新
     label:
@@ -30,16 +30,15 @@ ja:
       success: 登録が完了しました
       failure: 登録に失敗しました
   header:
-    title: Best Buy Gadgets
     posts: 投稿一覧
     new_post: 新規投稿
     my_page: マイページ
-    gadgets: ガジェット
+    gadgets: 自分の投稿
     logout: ログアウト
     login: ログイン
     signup: ユーザー登録
   boards:
     new:
-      title: 投稿作成
+      title: 新規投稿
     show:
       title: 投稿詳細
