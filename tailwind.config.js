@@ -1,9 +1,27 @@
+// tailwind.config.js
 module.exports = {
   content: [
-    './app/views/**/*.html.erb',
-    './app/helpers/**/*.rb',
-    './app/assets/stylesheets/**/*.css',
-    './app/javascript/**/*.js'
+    './app/**/*.{html,erb,js,jsx,ts,tsx}',
+    './app/views/**/*.{html,erb,js,jsx,ts,tsx}'
   ],
-  plugins: [require("daisyui")],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('daisyui')
+  ],
+  daisyui: {
+    themes: [
+      {
+        'mytheme': {  // 白とグレー基調のカスタムテーマ
+          'primary': '#4B5563', // ダークグレー
+          'secondary': '#9CA3AF', // ライトグレー
+          'accent': '#F3F4F6', // オフホワイト
+          'neutral': '#F9FAFB', // ホワイト
+          'base-100': '#FFFFFF', // 背景色はホワイト
+        },
+      },
+      // 他のテーマも追加可能
+    ],
+  },
 }

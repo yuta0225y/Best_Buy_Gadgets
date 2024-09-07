@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Best Buy Gadgets</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en" data-theme="mytheme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Buy Gadgets</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module' %>
+  
+  <!-- OGP Meta Tags -->
+  <meta property="og:title" content="Best Buy Gadgets">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= request.original_url %>">
+  <meta property="og:image" content="<%= asset_path('ogp.png') %>">
+  <meta property="og:description" content="お気に入りのガジェットを投稿するアプリ">
+  <meta property="og:site_name" content="Best Buy Gadgets">
+  <meta property="twitter:card" content="summary_large_image">
+</head>
 
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-  </head>
-
-  <body class="bg-gray-100">
-    <% if logged_in? %>
-      <%= render 'shared/header', class: "bg-white shadow" %>
-      <main class="container mx-auto p-4">
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-      <main class="container mx-auto p-4">
-    <% end %>
-    <%= render 'shared/flash_message' %>
-    <%= yield %>
-    </main>
-    <%= render 'shared/footer' %>
-  </body>
+<body class="bg-gray-100">
+  <% if logged_in? %>
+    <%= render 'shared/header', class: "bg-white shadow" %>
+    <main class="container mx-auto p-4">
+  <% else %>
+    <%= render 'shared/before_login_header' %>
+    <main class="container mx-auto p-4">
+  <% end %>
+  <%= render 'shared/flash_message' %>
+  <%= yield %>
+  </main>
+  <%= render 'shared/footer' %>
+</body>
 </html>
