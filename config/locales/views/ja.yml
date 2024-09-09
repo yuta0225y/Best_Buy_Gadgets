@@ -16,7 +16,6 @@ ja:
   user_sessions:
     new:
       title: ログイン
-      to_register_page: 登録ページへ
     create:
       success: ログインに成功しました
       failure: ログインに失敗しました
@@ -32,11 +31,8 @@ ja:
   header:
     posts: 投稿一覧
     new_post: 新規投稿
-    my_page: マイページ
-    gadgets: 自分の投稿
     logout: ログアウト
     login: ログイン
-    signup: ユーザー登録
   boards:
     new:
       title: 新規投稿
