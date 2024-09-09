@@ -5,7 +5,6 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.includes(:user)
-  
     if params[:tag]
       @boards = Board.tagged_with(params[:tag])
     else
