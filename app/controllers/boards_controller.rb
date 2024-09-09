@@ -5,8 +5,16 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.includes(:user)
+  
+    if params[:tag]
+      @boards = Board.tagged_with(params[:tag])
+    else
+      @boards = Board.all
+    end
+  
+    @boards = @boards.order(created_at: :desc)  # 最後にorderを適用する
   end
-
+  
   def show
     @board = Board.find(params[:id])
   end
@@ -29,5 +37,5 @@ end
 private
 
 def board_params
-  params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
+  params.require(:board).permit(:title, :body, :board_image, :board_image_cache, :tag_list)
 end
