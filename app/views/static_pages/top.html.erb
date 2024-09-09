@@ -1,15 +1,15 @@
-<header class="bg-base-100 shadow-md" data-theme="mytheme">
-  <div class="top-wrapper relative bg-cover bg-center" style="background-image: url(<%= asset_path 'top2.jpg' %>); height: calc(100vh - 134px);">
-    <div class="top-inner-text absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full">
-      <h1 class="text-black text-5xl md:text-7xl font-bold mt-4">Best Buy Gadgets</h1>
-      <h2 class="text-black text-lg md:text-2xl font-semibold mt-2">お気に入りのガジェットを共有しよう</h2>
-
-      <% unless logged_in? %>
-        <div class="mt-6 flex justify-center gap-4">
-          <%= link_to '投稿をみる', boards_path, class: "py-2 px-4 text-md bg-gray-200 text-gray-900 font-semibold rounded-md shadow hover:bg-gray-300" %>
-          <%= link_to 'ログインする', login_path, class: "py-2 px-4 text-md bg-gray-200 text-gray-900 font-semibold rounded-md shadow hover:bg-gray-300" %>
-        </div>
+<div class="hero min-h-screen mb-0 flex items-center justify-center" style="background-image: url('/assets/top.jpg'); background-size: cover; background-position: center;">
+  <div class="max-w-md text-center">
+    <h1 class="mb-5 text-3xl sm:text-4xl md:text-5xl font-bold">Best Buy Gadgets</h1>
+    <p class="mb-5">
+      お気に入りのガジェットを共有しよう！
+    </p>
+    <button class="btn btn-primary">
+      <% if logged_in? %>
+          <%= link_to 'はじめてみる', boards_path  %>
+      <% else %>
+          <%= link_to 'はじめてみる', login_path  %>
       <% end %>
-    </div>
+    </button>
   </div>
-</header>
+</div>
