@@ -1,23 +1,40 @@
-<div class="container mx-auto">
+<div class="container mx-auto py-8">
   <div class="flex justify-center">
     <div class="w-full lg:w-2/3">
-      <h1 class="text-2xl font-bold mb-4"><%= t('.title') %></h1>
-      <%= form_with model: @board, class: "new_board" do |f| %>
+      <h1 class="text-3xl font-bold mb-6 text-center text-gray-800"><%= t('.title') %></h1>
+
+      <%= form_with model: @board, class: "new_board card bg-base-100 shadow-lg p-6" do |f| %>
         <%= render "shared/error_messages", object: f.object %>
-        <div class="mb-4">
-          <%= f.label :title, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.text_field :title, class: "input input-bordered w-full mt-1" %>
-        </div>
-        <div class="mb-4">
-          <%= f.label :body, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.text_area :body, class: "textarea textarea-bordered w-full mt-1" %>
-        </div>
-        <div class="mb-4">
-          <%= f.label :board_image, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.file_field :board_image, class: "file-input file-input-bordered w-full mt-1", accept: 'image/*' %>
+
+        <!-- 画像フィールド -->
+        <div class="form-control mb-4">
+          <%= f.label :board_image, class: "label text-lg text-gray-700" %>
+          <%= f.file_field :board_image, class: "file-input file-input-bordered w-full", accept: 'image/*' %>
           <%= f.hidden_field :board_image_cache %>
         </div>
-        <%= f.submit nil, class: "btn w-full bg-gray-200 text-gray-800 hover:bg-gray-300 hover:text-gray-900 border-gray-200 hover:border-gray-300" %>
+
+        <!-- 商品名フィールド -->
+        <div class="form-control mb-4">
+          <%= f.label :title, class: "label text-lg text-gray-700" %>
+          <%= f.text_field :title, class: "input input-bordered w-full" %>
+        </div>
+
+        <!-- 内容（おすすめポイント）フィールド -->
+        <div class="form-control mb-4">
+          <%= f.label :body, class: "label text-lg text-gray-700" %>
+          <%= f.text_area :body, class: "textarea textarea-bordered w-full" %>
+        </div>
+
+        <!-- タグ入力フィールド -->
+        <div class="form-control mb-4">
+          <%= f.label :tag_list, "タグ（カンマ区切りで入力）", class: "label text-lg text-gray-700" %>
+          <%= f.text_field :tag_list, class: "input input-bordered w-full", placeholder: "例: ガジェット, おすすめ, 最新" %>
+        </div>
+
+        <!-- 送信ボタン -->
+        <div class="form-control">
+          <%= f.submit "投稿する", class: "btn btn-primary w-full" %>
+        </div>
       <% end %>
     </div>
   </div>
