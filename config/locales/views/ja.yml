@@ -16,6 +16,7 @@ ja:
   user_sessions:
     new:
       title: ログイン
+      to_register_page: ユーザー登録ページへ
     create:
       success: ログインに成功しました
       failure: ログインに失敗しました
