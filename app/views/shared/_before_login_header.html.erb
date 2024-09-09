@@ -1,5 +1,5 @@
 <header class="bg-base-100 shadow-md" data-theme="mytheme">
-  <nav class="navbar bg-base-100 z-10 relative">
+  <nav class="navbar bg-base-100 z-10 relative py-1">
     <div class="flex-1">
       <%= link_to '/', class: 'btn btn-ghost' do %>
         <%= image_tag 'home.png', alt: 'Home', class: 'w-8 h-8' %>
@@ -8,15 +8,7 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal px-4 flex items-center space-x-4">
         <li><%= link_to t('header.posts'), boards_path, class: 'btn btn-ghost' %></li>
-        <li>
-          <details class="relative">
-            <summary class="btn btn-ghost flex items-center mb-1"><%= t('header.my_page') %></summary> <!-- mb-1を追加 -->
-            <ul class="bg-base-100 rounded-lg shadow-lg mt-2 p-2 absolute right-0 z-20">
-              <li><%= link_to t('header.login'), login_path, class: 'btn btn-ghost' %></li>
-              <li><%= link_to t('header.signup'), new_user_path, class: 'btn btn-ghost' %></li>
-            </ul>
-          </details>
-        </li>
+        <li><%= link_to t('header.login'), login_path, class: 'btn btn-ghost' %></li>
       </ul>
     </div>
   </nav>
