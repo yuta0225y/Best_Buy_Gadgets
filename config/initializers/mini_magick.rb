@@ -1,3 +1,3 @@
 MiniMagick.configure do |config|
-  config.cli_path = '/opt/homebrew/bin'
+  config.cli = :imagemagick
 end
