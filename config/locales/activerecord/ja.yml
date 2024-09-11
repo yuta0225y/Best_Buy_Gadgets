@@ -5,10 +5,9 @@ ja:
     attributes:
       user:
         email: メールアドレス
-        name: 名前
+        name: ユーザー名
         password: パスワード
         password_confirmation: パスワード確認
       board:
-        title: タイトル
-        body: 内容
-        board_image: 画像 
+        body: おすすめポイント
+        board_image: 画像

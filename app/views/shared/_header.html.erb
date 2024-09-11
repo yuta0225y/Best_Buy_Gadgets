@@ -1,10 +1,10 @@
 <header class="bg-base-100 shadow-md" data-theme="mytheme">
   <nav class="navbar bg-base-100 p-1">
-    <div class="flex-1">
-      <%= link_to '/', class: 'btn btn-ghost' do %>
-        <%= image_tag 'home.png', alt: 'Home', class: 'w-8 h-8' %>
-      <% end %>
-    </div>
+  <div class="flex-1">
+    <%= link_to '/', class: 'btn btn-ghost' do %>
+       <span class="text-lg font-bold">Best Buy Gadgets</span>
+    <% end %>
+  </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal p-2">
         <li><%= link_to t('header.posts'), boards_path, class: 'btn btn-ghost' %></li>

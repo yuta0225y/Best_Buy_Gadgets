@@ -4,27 +4,40 @@
       <h1 class="text-2xl font-bold mb-6"><%= t('users.new.title') %></h1>
       <%= form_with model: @user do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
+
+        <!-- ユーザー名フィールド -->
         <div class="mb-4">
           <%= f.label :name, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.text_field :name, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary" %>
+          <%= f.text_field :name, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary", placeholder: "ユーザー名は10文字以下" %>
         </div>
+
+        <!-- メールフィールド -->
         <div class="mb-4">
           <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.email_field :email, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary" %>
+          <%= f.email_field :email, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary", placeholder: "メールアドレスを入力" %>
         </div>
+
+        <!-- パスワードフィールド -->
         <div class="mb-4">
           <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.password_field :password, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary" %>
+          <%= f.password_field :password, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary", placeholder: "4文字以上8文字以下" %>
         </div>
+
+        <!-- パスワード確認フィールド -->
         <div class="mb-4">
           <%= f.label :password_confirmation, class: "block text-sm font-medium text-gray-700" %>
-          <%= f.password_field :password_confirmation, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary" %>
+          <%= f.password_field :password_confirmation, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary", placeholder: "パスワード確認" %>
         </div>
+
+        <!-- 送信ボタン -->
         <%= f.submit class: "w-full py-2 px-4 bg-gray-200 text-gray-900 font-semibold rounded-md shadow hover:bg-gray-300" %>
       <% end %>
+
+      <!-- ログインページへのリンク -->
       <div class="text-center mt-4">
         <%= link_to t('.to_login_page'), login_path, class: "text-primary hover:underline" %>
       </div>
     </div>
   </div>
 </header>
+
