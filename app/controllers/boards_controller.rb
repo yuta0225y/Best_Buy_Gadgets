@@ -36,5 +36,5 @@ end
 private
 
 def board_params
-  params.require(:board).permit(:title, :body, :board_image, :board_image_cache, :tag_list)
+  params.require(:board).permit(:body, :board_image, :board_image_cache, :tag_list)
 end
