@@ -12,23 +12,18 @@
           <%= f.file_field :board_image, class: "file-input file-input-bordered w-full", accept: 'image/*' %>
           <%= f.hidden_field :board_image_cache %>
         </div>
-
-        <!-- 商品名フィールド -->
-        <div class="form-control mb-4">
-          <%= f.label :title, class: "label text-lg text-gray-700" %>
-          <%= f.text_field :title, class: "input input-bordered w-full" %>
-        </div>
+        
 
         <!-- 内容（おすすめポイント）フィールド -->
         <div class="form-control mb-4">
           <%= f.label :body, class: "label text-lg text-gray-700" %>
-          <%= f.text_area :body, class: "textarea textarea-bordered w-full" %>
-        </div>
+          <%= f.text_area :body, class: "textarea textarea-bordered w-full", placeholder: "例: デザインが好き！コスパが良い！〇〇な機能性が良いなど！" %>
+        </div>        
 
         <!-- タグ入力フィールド -->
         <div class="form-control mb-4">
           <%= f.label :tag_list, "タグ（カンマ区切りで入力）", class: "label text-lg text-gray-700" %>
-          <%= f.text_field :tag_list, class: "input input-bordered w-full", placeholder: "例: ガジェット, おすすめ, 最新" %>
+          <%= f.text_field :tag_list, class: "input input-bordered w-full", placeholder: "例: キーボード, HHKB, ホワイト, デスクアイテム" %>
         </div>
 
         <!-- 送信ボタン -->
