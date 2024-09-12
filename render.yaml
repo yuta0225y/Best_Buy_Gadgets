@@ -3,6 +3,7 @@ services:
     name: myapp
     env: ruby
     dockerfilePath: Dockerfile
+    buildCommand: "bundle install && rails db:migrate"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
