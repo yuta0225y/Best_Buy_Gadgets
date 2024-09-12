@@ -1,6 +1,5 @@
 class BoardImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick # 画像サイズ調整のためにMiniMagickをinclude
-
   if Rails.env.production? # 本番環境の場合はS3に保存
     storage :fog
   else
