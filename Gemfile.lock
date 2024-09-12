@@ -409,6 +409,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   fog-aws
+  image_processing
   jbuilder
   jsbundling-rails
   mini_magick
