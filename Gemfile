@@ -56,6 +56,7 @@ gem 'aws-sdk-s3', require: false
 gem 'carrierwave', '~> 3.0'
 gem 'mini_magick'
 gem 'fog-aws'
+gem "image_processing"
 
 # environment variables
 gem 'dotenv-rails'
