@@ -13,11 +13,12 @@
   <meta property="og:title" content="Best Buy Gadgets">
   <meta property="og:type" content="website">
   <meta property="og:url" content="<%= request.original_url %>">
-  <meta property="og:image" content="<%= asset_path('ogp.png') %>">
+  <meta property="og:image" content="<%= asset_url('ogp.png') %>">
   <meta property="og:description" content="お気に入りのガジェットを投稿するアプリ">
   <meta property="og:site_name" content="Best Buy Gadgets">
   <meta property="twitter:card" content="summary_large_image">
 </head>
+
 
 <body class="bg-gray-100">
   <% if logged_in? %>
