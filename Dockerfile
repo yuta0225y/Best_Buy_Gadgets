@@ -23,6 +23,7 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y imagemagick
 
 
+    
 # Install JavaScript dependencies
 ARG NODE_VERSION=20.16.0
 ARG YARN_VERSION=1.22.22
