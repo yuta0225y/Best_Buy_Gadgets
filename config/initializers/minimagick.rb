@@ -1,3 +1,3 @@
 MiniMagick.configure do |config|
-  config.cli = :magick
+  config.cli = :imagemagick
 end
