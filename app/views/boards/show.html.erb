@@ -1,11 +1,11 @@
 <div class='container mx-auto px-4'>
   <div class='md:w-1/2 mx-auto'>
-    <!-- ユーザー名を表示 -->
-    <div class="text-left mb-4"> <!-- text-centerをtext-leftに変更 -->
-      <p class="text-sm text-gray-800"><%= @board.user.name %></p> <!-- font-semiboldを削除して、text-lgをtext-smに変更 -->
-    </div>
 
-    <!-- 画像にマージンを追加 -->
+
+    <div class="text-left mb-4"> 
+      <p class="text-sm text-gray-800"><%= @board.user.name %></p> 
+   </div>
+
     <%= image_tag @board.board_image_url, class: 'object-contain w-full h-auto mx-auto mb-4' %>
 
     <!-- タグ表示部分にリンクを追加 -->
@@ -23,9 +23,11 @@
     </p>
   </div>
   
-  <div class='flex flex-col items-center mb-6'> <!-- items-endをitems-centerに変更 -->
+  <%= link_to '編集', edit_board_path(@board), class: 'btn btn-primary' %>
+<%= link_to '削除', board_path(@board), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+  <div class='flex flex-col items-center mb-6'> 
   <!-- Xでシェアのボタン -->
-  <div class="mb-4 flex justify-end"> <!-- flexとjustify-endを追加 -->
+  <div class="mb-4 flex justify-end"> 
     <%= link_to "Xでシェア", 
                 "https://twitter.com/intent/tweet?text=#{CGI.escape('Best Buy!')}&url=#{CGI.escape(board_url(@board))}&hashtags=BestBuyGadgets,RUNTEQ祭", 
                 target: '_blank', 

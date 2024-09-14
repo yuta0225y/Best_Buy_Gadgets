@@ -5,6 +5,9 @@ ja:
       created: 投稿しました
       not_created: 投稿できませんでした
       require_login: ログインしてください
+      updated: 投稿を更新しました
+      not_updated: 投稿を更新できませんでした
+      deleted: 投稿を削除しました
   helpers:
     submit:
       create: 登録
