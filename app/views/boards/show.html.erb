@@ -1,10 +1,8 @@
 <div class='container mx-auto px-4'>
   <div class='md:w-1/2 mx-auto'>
-
-
     <div class="text-left mb-4"> 
       <p class="text-sm text-gray-800"><%= @board.user.name %></p> 
-   </div>
+    </div>
 
     <%= image_tag @board.board_image_url, class: 'object-contain w-full h-auto mx-auto mb-4' %>
 
@@ -18,21 +16,27 @@
     </div>
 
     <div class='text-left mb-6'>
-    <p class='mb-6 text-sm'>
-      <%= @board.body %>
-    </p>
-  </div>
+      <p class='mb-6 text-sm'>
+        <%= @board.body %>
+      </p>
+    </div>
   
-  <%= link_to '編集', edit_board_path(@board), class: 'btn btn-primary' %>
-<%= link_to '削除', board_path(@board), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
-  <div class='flex flex-col items-center mb-6'> 
-  <!-- Xでシェアのボタン -->
-  <div class="mb-4 flex justify-end"> 
-    <%= link_to "Xでシェア", 
-                "https://twitter.com/intent/tweet?text=#{CGI.escape('Best Buy!')}&url=#{CGI.escape(board_url(@board))}&hashtags=BestBuyGadgets,RUNTEQ祭", 
-                target: '_blank', 
-                class: 'inline-block px-2 py-1 text-gray-800 bg-white rounded-full hover:bg-gray-100 text-sm' %>
+    <% if current_user == @board.user %>
+      <%= link_to '編集', edit_board_path(@board), class: 'btn btn-primary' %>
+      <%= link_to '削除', board_path(@board), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+    <% end %>
+
+    <div class='flex flex-col items-center mb-6'> 
+      <!-- Xでシェアのボタン -->
+      <div class="mb-4 flex justify-end"> 
+        <%= link_to "Xでシェア", 
+                    "https://twitter.com/intent/tweet?text=#{CGI.escape('Best Buy!')}&url=#{CGI.escape(board_url(@board))}&hashtags=BestBuyGadgets,RUNTEQ祭", 
+                    target: '_blank', 
+                    class: 'inline-block px-2 py-1 text-gray-800 bg-white rounded-full hover:bg-gray-100 text-sm' %>
+      </div>
+    </div>
   </div>
+</div>
   
     <!-- 作成日時 -->
     <div class="text-center mb-4">
