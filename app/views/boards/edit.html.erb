@@ -1,0 +1,51 @@
+<div class='container mx-auto px-4'>
+  <div class='md:w-1/2 mx-auto'>
+    
+    <!-- 投稿者の名前部分 -->
+    <div class="text-left mb-4"> 
+      <p class="text-sm text-gray-800"><%= @board.user.name %></p> 
+    </div>
+
+    <!-- 現在の画像を表示 -->
+    <%= image_tag @board.board_image_url, class: 'object-contain w-full h-auto mx-auto mb-4' if @board.board_image_url.present? %>
+
+    <!-- フォーム部分 -->
+    <%= form_with(model: @board, local: true) do |form| %>
+      <!-- タグ編集 -->
+      <div class="mb-6">
+        <%= form.label :tag_list, "タグ（カンマ区切りで入力）", class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.text_field :tag_list, value: @board.tag_list.join(", "), class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "タグをカンマで区切って入力" %>
+      </div>
+
+      <!-- コンテンツ編集 -->
+      <div class="mb-6">
+        <%= form.label :content, "おすすめポイント", class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.text_area :content, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      </div>
+
+      <!-- 画像アップロード -->
+      <div class="mb-6">
+        <%= form.label :board_image, "画像の再アップロード（必要であれば）", class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.file_field :board_image, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+        <!-- 画像キャッシュ用のフィールド -->
+        <%= form.hidden_field :board_image_cache %>
+      </div>
+
+      <!-- 更新ボタン -->
+      <div class="flex justify-end">
+        <%= form.submit '更新', class: 'btn bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded' %>
+      </div>
+    <% end %>
+
+    <!-- 作成日時 -->
+    <div class="text-center mb-4">
+      <%= l @board.created_at, format: '%Y/%m/%d %H:%M' %>
+    </div>
+  
+    <!-- 投稿一覧へのリンク -->
+    <div class='text-center'>
+      <%= link_to "投稿一覧へ", boards_path, class: "text-blue-500 underline" %>
+    </div>
+    
+  </div>
+</div>
