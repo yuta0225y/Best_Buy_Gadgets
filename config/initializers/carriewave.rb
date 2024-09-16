@@ -14,4 +14,5 @@ CarrierWave.configure do |config| # CarrierWaveの設定
     region: 'ap-northeast-1', # リージョン
     path_style: true # 追加
   }
+  config.cache_dir = "#{Rails.root}/tmp/uploads"
 end
