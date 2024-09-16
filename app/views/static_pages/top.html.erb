@@ -2,6 +2,7 @@
   <div class="max-w-md text-center">
     <h1 class="mb-5 text-3xl sm:text-4xl md:text-5xl font-bold">Best Buy Gadgets</h1>
     <p class="mb-5">お気に入りのガジェットを共有しよう！</p>
+    <%= link_to '投稿を見る', boards_path, class: "btn bg-white text-black hover:bg-gray-300 transition-colors" %>
     <% if logged_in? %>
      <%= link_to 'はじめる', boards_path, class: "btn bg-white text-black hover:bg-gray-300 transition-colors" %>
     <% else %>
