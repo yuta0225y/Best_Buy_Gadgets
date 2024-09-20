@@ -1,22 +1,29 @@
 class BoardImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::RMagick # 画像サイズ調整のためにMiniMagickをinclude
-  if Rails.env.production? # 本番環境の場合はS3に保存
+  include CarrierWave::RMagick
+
+  if Rails.env.production?
     storage :fog
   else
     storage :file
   end
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}" # 画像の保存先の指定
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def default_url
-    ActionController::Base.helpers.asset_path('board_placeholder.png')  # 画像がない場合のデフォルト画像
+  def default_url(*args)
+    ActionController::Base.helpers.asset_path('board_placeholder.png')
   end
 
-  process resize_to_fit: [400, 400] # 画像サイズの上限を400x400にする
+  # メイン画像のリサイズは不要なのでコメントアウト
+  # process resize_to_fit: [400, 400]
 
-  def extension_allowlist # 画像の拡張子を許可
+  # リサイズ用のバージョンを定義
+  version :resized do
+    process resize_to_fit: [400, 400]
+  end
+
+  def extension_allowlist
     %w[jpg jpeg gif png]
   end
 end
