@@ -54,9 +54,9 @@ gem 'rails-i18n', '~> 7.0.0'
 # upload
 gem 'aws-sdk-s3', require: false
 gem 'carrierwave', '~> 3.0'
-gem 'mini_magick'
 gem 'fog-aws'
 gem "image_processing"
+gem 'rmagick' 
 
 # environment variables
 gem 'dotenv-rails'
